@@ -1,7 +1,7 @@
 from PyQt5.QtWidgets import ( QApplication, QWidget, QPushButton, QVBoxLayout,
                             QMessageBox, QPlainTextEdit, QHBoxLayout, 
                             QLineEdit, QComboBox, QLabel ) 
-from PyQt5.QtGui import QIcon
+from PyQt5.QtGui import QIcon, QFont
 from PyQt5 import QtCore    # 모듈 추가
 
 
@@ -28,6 +28,7 @@ class View(QWidget) :
         self.cb.addItems(['+', '-', '*', '/' ])
 
         self.lbl1 = QLabel('R2.3.0', self)  # QLabel 객체 생성
+        self.lbl1.setFont(QFont('Consolas', 10))
         self.btn1 = QPushButton('Calc', self)
         self.btn2 = QPushButton('Clear', self)
 
