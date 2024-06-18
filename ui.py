@@ -1,6 +1,6 @@
 from PyQt5.QtWidgets import ( QApplication, QWidget, QPushButton, QVBoxLayout,
                             QMessageBox, QPlainTextEdit, QHBoxLayout, 
-                            QLineEdit, QComboBox ) 
+                            QLineEdit, QComboBox, QLabel ) 
 from PyQt5.QtGui import QIcon
 from PyQt5 import QtCore    # 모듈 추가
 
@@ -27,6 +27,7 @@ class View(QWidget) :
         # self.cb.addItems(['+', '-', '*', '/', '^', '%'])    # 아이템 추가
         self.cb.addItems(['+', '-', '*', '/' ])
 
+        self.lbl1 = QLabel('R2.3.0', self)  # QLabel 객체 생성
         self.btn1 = QPushButton('Calc', self)
         self.btn2 = QPushButton('Clear', self)
 
@@ -39,6 +40,7 @@ class View(QWidget) :
         hbox = QHBoxLayout()
         hbox.setSpacing(10)
         hbox.addStretch(1)
+        hbox.addWidget(self.lbl1)   # 버전 정보 표시
         hbox.addWidget(self.btn1)
         hbox.addWidget(self.btn2)
 
